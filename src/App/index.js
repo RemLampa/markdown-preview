@@ -5,26 +5,31 @@ import MarkdownInput from 'Components/MarkdownInput';
 import MarkdownPreview from 'Components/MarkdownPreview';
 
 import './app.scss';
-import './app.css';
 
-export default function App() {
-  return (
-    <div>
-      <Header />
-      <MarkdownInput />
-      <MarkdownPreview />
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      markdownText: ''
+    }
+
+    this.onMarkDownInputChange = this.onMarkDownInputChange.bind(this);
+  }
+
+  onMarkDownInputChange(text) {
+    this.setState({ markdownText: text });
+  }
+
+  render() {
+    const { markdownText } = this.state;
+
+    return (
+      <div>
+        <Header />
+        <MarkdownInput text={ markdownText } handleChange={ this.onMarkDownInputChange }/>
+        <MarkdownPreview text={ markdownText }/>
+      </div>
+    );
+  }
 }
-
-// export default class App extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <Header />
-//         <MarkdownInput />
-//         <MarkdownPreview />
-//       </div>
-//     );
-//   }
-// }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class MarkdownPreview extends Component {
   render() {
-    return <div>MarkdownPreview</div>;
+    return <div>{this.props.text}</div>;
   }
 }
 

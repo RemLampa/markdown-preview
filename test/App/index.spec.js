@@ -23,15 +23,28 @@ describe('<App />', () => {
     expect(wrapper.type()).to.equal('div');
   });
 
-  it('should have a <Header> component', () => {
-    expect(wrapper.contains(<Header />)).to.be.true;
+  it('should have initial state of markdownText with empty string', () => {
+    expect(wrapper.state('markdownText')).to.be.equal('');
   });
 
-  it('should have a <MarkdownInput> component', () => {
-    expect(wrapper.contains(<MarkdownInput />)).to.be.true;
+  it('should have onMarkDownInputChange method that changes state.markdownText', () => {
+    const instance = wrapper.instance(),
+      text = 'test test';
+
+    instance.onMarkDownInputChange(text);
+
+    expect(wrapper.state('markdownText')).to.be.equal(text);
   });
 
-  it('should have a <MarkdownPreview> component', () => {
-    expect(wrapper.contains(<MarkdownPreview />)).to.be.true;
+  it('should contain one <Header> component', () => {
+    expect(wrapper.find(Header)).to.have.length(1);
+  });
+
+  it('should contain one <MarkdownInput> component', () => {
+    expect(wrapper.find(MarkdownInput)).to.have.length(1);
+  });
+
+  it('should contain <MarkdownPreview> component', () => {
+    expect(wrapper.find(MarkdownPreview)).to.have.length(1);
   });
 });
