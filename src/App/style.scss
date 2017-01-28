@@ -8,3 +8,9 @@ $main-font-color: #333333;
 body {
   color: $main-font-color;
 }
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

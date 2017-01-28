@@ -8,9 +8,9 @@ const MarkdownInput = ({ text, handleChange }) => {
   }
 
   return (
-    <form>
+    <form className="markdown-input">
       <textarea
-        className="form-control markdown-input"
+        className="form-control"
         value={text}
         onChange={handleTextAreaChange}
       />

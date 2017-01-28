@@ -4,7 +4,7 @@ import Header from 'Components/Header';
 import MarkdownInput from 'Components/MarkdownInput';
 import MarkdownPreview from 'Components/MarkdownPreview';
 
-import './app.scss';
+import style from './style.scss';
 
 export default class App extends Component {
   constructor(props) {
@@ -27,8 +27,10 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-        <MarkdownInput text={ markdownText } handleChange={ this.onMarkDownInputChange }/>
-        <MarkdownPreview text={ markdownText }/>
+        <div className="content">
+          <MarkdownInput text={ markdownText } handleChange={ this.onMarkDownInputChange }/>
+          <MarkdownPreview text={ markdownText }/>
+        </div>
       </div>
     );
   }

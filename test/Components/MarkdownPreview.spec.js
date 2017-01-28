@@ -2,10 +2,12 @@ import React from 'react';
 import marked from 'marked';
 
 import chai, { expect } from 'chai';
-import { shallow } from 'enzyme';
-import sinon from 'sinon';
+import { shallow, render } from 'enzyme';
+import chaiEnzyme from 'chai-enzyme';
 
 import MarkdownPreview from 'Components/MarkdownPreview';
+
+chai.use(chaiEnzyme());
 
 describe('<MarkdownPreview />', () => {
   let wrapper,
@@ -18,16 +20,10 @@ describe('<MarkdownPreview />', () => {
 
   beforeEach(() => {
     props = {
-      text: 'test'
+      text: '# test'
     };
 
-    spy = sinon.spy(marked, 'call');
-
     wrapper = buildWrapper(props);
-  });
-
-  afterEach(() => {
-    spy.restore();
   });
 
   it('should be a div', () => {
@@ -35,10 +31,9 @@ describe('<MarkdownPreview />', () => {
   });
 
   it('should render converted markdown text props with marked library', () => {
-    const convertedText = marked(props.text);
+    const renderedWrapper = render(<MarkdownPreview {...props} />),
+      convertedText = marked(props.text);
 
-    expect(wrapper.html()).to.equal('<div>' + convertedText + '</div>');
+    expect(renderedWrapper.html()).to.contain(convertedText);
   });
-
-
 });
