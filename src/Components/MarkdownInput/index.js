@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import './style.scss';
+import style from './style.scss';
 
 const MarkdownInput = ({ text, handleChange }) => {
   const handleTextAreaChange = (event) => {
@@ -10,7 +10,7 @@ const MarkdownInput = ({ text, handleChange }) => {
   return (
     <form>
       <textarea
-        className="form-control"
+        className="form-control markdown-input"
         value={text}
         onChange={handleTextAreaChange}
       />
