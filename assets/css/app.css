@@ -1,4 +1,4 @@
-.header{text-align:center}.markdown-input{flex:1 1 45%;margin:2%;min-width:350px}.markdown-input textarea{min-height:80%;height:80%}.markdown-preview{flex:1 1 45%;min-width:350px;margin:2%;min-height:80%}/*!
+.header{text-align:center}.markdown-input{flex:1 1 45%;margin:2%;min-width:350px}.markdown-input textarea{min-height:80%;height:80%!important}.markdown-preview{flex:1 1 45%;min-width:350px;margin:2%;min-height:80%}/*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
