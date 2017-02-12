@@ -4,6 +4,8 @@ A simple Markdown Preview App
 
 Features React, SASS, Bootstrap, CSS Flexbox, marked, mocha, chai, enzyme & sinon.
 
+Uses [fcc-react-project](https://github.com/ibleedfilm/fcc-react-project) boilerplate.
+
 [View Demo](https://ibleedfilm.github.io/markdown-preview).
 
 ## USAGE
