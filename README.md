@@ -12,6 +12,7 @@ Features React, SASS, Bootstrap, CSS Flexbox, marked, mocha, chai, enzyme & sino
 - To run web server, `$ npm start`.
 - Open your browser and go to [`http://localhost:3000`](http://localhost:3000)
 - To run tests, `$ npm test`.
+- To deploy to Github Pages, `$ npm run deploy`.
 
 ## LICENSE
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
